@@ -1,4 +1,4 @@
-package com.example.mysnakes.ui.theme
+package com.example.mysnakes.presentation.activity.ui.theme
 
 import android.app.Activity
 import android.os.Build
