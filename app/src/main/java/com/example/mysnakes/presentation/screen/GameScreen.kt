@@ -60,19 +60,23 @@ fun GameScreen(navController: NavHostController, gameEngine: GameEngine) {
 
                 Spacer(modifier = Modifier.height(12.dp))
 
-                Row {
+                Row(modifier = Modifier.padding(all = 8.dp)) {
                     // TODO можно повернуться на 180 градусов
-                    AppIconButton(
-                        icon = Icons.Default.KeyboardArrowLeft,
-                        onClick = { gameEngine.moveUpdate(Direction.LEFT) }
-                    )
+                    Column(modifier = Modifier.weight(1f)) {
+                        AppIconButton(
+                            icon = Icons.Default.KeyboardArrowLeft,
+                            onClick = { gameEngine.moveUpdate(Direction.LEFT) }
+                        )
+                    }
 
                     Spacer(modifier = Modifier.width(12.dp))
 
-                    AppIconButton(
-                        icon = Icons.Default.KeyboardArrowRight,
-                        onClick = { gameEngine.moveUpdate(Direction.RIGHT) }
-                    )
+                    Column(modifier = Modifier.weight(1f)) {
+                        AppIconButton(
+                            icon = Icons.Default.KeyboardArrowRight,
+                            onClick = { gameEngine.moveUpdate(Direction.RIGHT) }
+                        )
+                    }
                 }
             }
         }

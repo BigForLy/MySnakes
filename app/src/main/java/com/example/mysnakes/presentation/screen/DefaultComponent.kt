@@ -13,6 +13,7 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.mysnakes.presentation.activity.ui.theme.Pink40
 import com.example.mysnakes.presentation.activity.ui.theme.Purple40
 import com.example.mysnakes.presentation.engine.BoardEngine
 import com.example.mysnakes.presentation.model.State
@@ -37,9 +38,9 @@ fun AppIconButton(icon: ImageVector, onClick: () -> Unit) {
     IconButton(
         onClick = onClick,
         modifier = Modifier
-            .size(128.dp) /*TODO*/
+            .fillMaxWidth()
             .background(
-                color = MaterialTheme.colorScheme.onBackground,
+                color = Pink40,
                 shape = RoundedCornerShape(4.dp)
             ),
     ) {
