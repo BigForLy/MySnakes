@@ -35,10 +35,7 @@ fun GameScreen(navController: NavHostController, gameEngine: GameEngine) {
                     ) {
                         AppButton(
                             name = "Back",
-                            onClick = {
-                                gameEngine.gameState = GameState.PAUSE  // ??
-                                navController.navigate(Screen.Menu.route)
-                            }
+                            onClick = { navController.navigate(Screen.Menu.route) }
                         )
                     }
 
