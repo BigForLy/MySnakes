@@ -10,10 +10,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.mysnakes.presentation.activity.ui.theme.MySnakesTheme
+import com.example.mysnakes.presentation.engine.GameEngine
+import com.example.mysnakes.presentation.model.GameState
 import com.example.mysnakes.presentation.navigation.Screen
 
 @Composable
-fun MenuScreen(navController: NavHostController) {
+fun MenuScreen(navController: NavHostController, gameEngine: GameEngine) {
+    gameEngine.gameState = GameState.PAUSE
     MySnakesTheme {
         // A surface container using the 'background' color from the theme
         Surface(

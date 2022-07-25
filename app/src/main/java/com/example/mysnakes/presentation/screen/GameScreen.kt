@@ -16,11 +16,13 @@ import androidx.navigation.NavHostController
 import com.example.mysnakes.presentation.activity.ui.theme.MySnakesTheme
 import com.example.mysnakes.presentation.engine.GameEngine
 import com.example.mysnakes.presentation.model.Direction
+import com.example.mysnakes.presentation.model.GameState
 import com.example.mysnakes.presentation.navigation.Screen
 
 @Composable
 fun GameScreen(navController: NavHostController, gameEngine: GameEngine) {
     val state = gameEngine.state.collectAsState(initial = null)
+    gameEngine.gameState = GameState.START
     MySnakesTheme {
         Surface(
             modifier = Modifier.fillMaxSize(),

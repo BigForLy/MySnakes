@@ -12,7 +12,6 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
 import com.example.mysnakes.presentation.activity.ui.theme.Pink40
 import com.example.mysnakes.presentation.activity.ui.theme.Purple40
 import com.example.mysnakes.presentation.engine.BoardEngine

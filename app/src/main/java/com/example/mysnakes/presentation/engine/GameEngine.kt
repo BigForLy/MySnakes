@@ -18,12 +18,14 @@ class GameEngine(scope: CoroutineScope) {
         )
     val state: Flow<State> = mutableState
 
+    var gameState: GameState = GameState.NONE  // mutableStateOf
+
     private fun startPositionSnake(): State {
         return State(
             food = Food(),
             snake = Snake(),
             currentDirection = RightDirection(),
-            n_time = 0
+            n_time = 0,
         )
     }
 
