@@ -4,10 +4,14 @@ data class State(
     val food: Food,
     val snake: Snake,
     val currentDirection: BaseDirection,
-    val n_time: Int
+    val n_time: Int,
 )
 
 data class MyPair(
     val x: Int,
     val y: Int
 )
+
+enum class GameState {
+    START, PAUSE, END, NONE
+}

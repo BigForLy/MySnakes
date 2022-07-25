@@ -67,8 +67,8 @@ fun Board(state: State) {
         Box(
             Modifier
                 .offset(
-                    x = tileSize * state.food.position.x,
-                    y = tileSize * state.food.position.y
+                    x = tileSize * state.food.position.first,
+                    y = tileSize * state.food.position.second
                 )
                 .size(tileSize)
                 .background(

@@ -47,13 +47,24 @@ class GameEngine(scope: CoroutineScope) {
             while (true) {
                 delay(300)
 //                delay(150)
-                mutableState.update {
-                    mutex.withLock {
-                        it.snake.updateDelayPosition(it.currentDirection.move)
+                if (gameState == GameState.START) {
+                    mutableState.update {
+                        val newElement = it.snake.body.first().let { _ ->
+                            mutex.withLock {
+                                it.snake.createNewSnakeElement(it.currentDirection.move)
+                            }
+                        }
+
+                        if (newElement == it.food.position) {
+                            it.food.generate()
+                            it.snake.addBodyElement(newElement)
+                        }
+                        it.snake.updateDelayPosition(newElement)
+
+                        it.copy(
+                            n_time = it.n_time + 1
+                        )
                     }
-                    it.copy(
-                        n_time = it.n_time + 1
-                    )
                 }
             }
         }

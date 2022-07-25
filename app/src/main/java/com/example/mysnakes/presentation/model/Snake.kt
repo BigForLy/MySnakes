@@ -2,13 +2,19 @@ package com.example.mysnakes.presentation.model
 
 
 class Snake {
-    var body: List<Pair<Int, Int>> = startPositionSnake()
+    var body: MutableList<Pair<Int, Int>> = startPositionSnake()
 
-    fun updateDelayPosition(move: MyPair) {
-        body = listOf(createNewSnakeElement(move)) + body.take(body.size - 1)
+    fun addBodyElement(element: Pair<Int, Int>) {
+        body.add(element)
     }
 
-    private fun createNewSnakeElement(move: MyPair): Pair<Int, Int> {
+    fun updateDelayPosition(element: Pair<Int, Int>) {
+        body =
+            (listOf(element) + body.take(body.size - 1))
+                    as MutableList<Pair<Int, Int>>
+    }
+
+    fun createNewSnakeElement(move: MyPair): Pair<Int, Int> {
         return body.first().let { poz ->
             Pair(
                 poz.first + move.x,
@@ -17,8 +23,8 @@ class Snake {
         }
     }
 
-    private fun startPositionSnake(): List<Pair<Int, Int>> {
-        return listOf(
+    private fun startPositionSnake(): MutableList<Pair<Int, Int>> {
+        return mutableListOf(
             Pair(1, 30),
             Pair(2, 30),
             Pair(3, 30)  // snake head
