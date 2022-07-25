@@ -30,23 +30,19 @@ fun MenuScreen(navController: NavHostController) {
 
                 AppButton(
                     "Start Game",
-                    navController = navController,
-                    route = Screen.Game.route
+                    onClick = { navController.navigate(Screen.Game.route) }
                 )
                 AppButton(
                     name = "Records",
-                    navController = navController,
-                    route = Screen.Records.route
+                    onClick = { navController.navigate(Screen.Records.route) }
                 )
                 AppButton(
                     "Settings",
-                    navController = navController,
-                    route = Screen.Settings.route
+                    onClick = { navController.navigate(Screen.Settings.route) }
                 )
                 AppButton(
                     "About",
-                    navController = navController,
-                    route = Screen.About.route
+                    onClick = { navController.navigate(Screen.About.route) }
                 )
             }
         }

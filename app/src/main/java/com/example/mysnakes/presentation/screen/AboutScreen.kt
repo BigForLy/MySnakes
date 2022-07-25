@@ -26,8 +26,7 @@ fun AboutScreen(navController: NavHostController) {
                 AppText("About")
                 AppButton(
                     name = "Back",
-                    navController = navController,
-                    route = Screen.Menu.route
+                    onClick = { navController.navigate(Screen.Menu.route) }
                 )
             }
         }

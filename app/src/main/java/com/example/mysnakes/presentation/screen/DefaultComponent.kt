@@ -21,14 +21,9 @@ import com.example.mysnakes.presentation.model.State
 @Composable
 fun AppButton(
     name: String,
-    route: String? = null,
-    navController: NavController? = null
+    onClick: () -> Unit
 ) {
-    Button(onClick = {
-        if (navController != null && route != null) {
-            navController.navigate(route)
-        }
-    }) {
+    Button(onClick = onClick) {
         Text(text = name)
     }
 }

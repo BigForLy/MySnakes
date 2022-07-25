@@ -26,8 +26,7 @@ fun RecordsScreen(navController: NavHostController) {
                 AppText("Records")
                 AppButton(
                     name = "Back",
-                    navController = navController,
-                    route = Screen.Menu.route
+                    onClick = { navController.navigate(Screen.Menu.route) }
                 )
             }
         }
