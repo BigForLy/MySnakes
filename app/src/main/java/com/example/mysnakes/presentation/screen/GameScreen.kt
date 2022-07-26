@@ -45,9 +45,9 @@ fun GameScreen(navController: NavHostController, gameEngine: GameEngine) {
                         modifier = Modifier.weight(1f)
                     ) {
                         AppText(
-                            "Score: ${GameEngine.Score}",
+                            "Score: ${state.value?.score}",
                             fontSize = 30.sp
-                        )  /* TODO: ДИНАМИЧЕСКИЙ ПОДСЧЕТ РЕЗУЛЬТАТА */
+                        )
                     }
                 }
 
@@ -62,7 +62,7 @@ fun GameScreen(navController: NavHostController, gameEngine: GameEngine) {
                 Spacer(modifier = Modifier.height(12.dp))
 
                 Row(modifier = Modifier.padding(all = 8.dp)) {
-                    // TODO можно повернуться на 180 градусов
+                    // TODO можно повернуться на 180+ градусов
                     Column(modifier = Modifier.weight(1f)) {
                         AppIconButton(
                             icon = Icons.Default.KeyboardArrowLeft,

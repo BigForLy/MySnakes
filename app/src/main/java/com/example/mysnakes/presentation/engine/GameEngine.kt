@@ -25,6 +25,7 @@ class GameEngine(scope: CoroutineScope) {
             food = Food(),
             snake = Snake(),
             currentDirection = RightDirection(),
+            score = 0,
             n_time = 0,
         )
     }
@@ -47,7 +48,7 @@ class GameEngine(scope: CoroutineScope) {
     init {
         scope.launch {
             while (true) {
-                delay(300)
+                delay(200)
 //                delay(150)
                 if (gameState == GameState.START) {
                     mutableState.update {
@@ -60,6 +61,7 @@ class GameEngine(scope: CoroutineScope) {
                         if (newElement == it.food.position) {
                             it.food.generate()
                             it.snake.addBodyElement(newElement)
+                            it.score = it.score + 10
                         }
                         it.snake.updateDelayPosition(newElement)
 
@@ -70,9 +72,5 @@ class GameEngine(scope: CoroutineScope) {
                 }
             }
         }
-    }
-
-    companion object {
-        var Score = 0
     }
 }
